@@ -1,0 +1,5987 @@
+// ------------------------------------------
+// VARIABLES
+// ------------------------------------------ 
+
+$woodmart-primary-color: #131313;
+$woodmart-sidebar-color: #333333;
+$woodmart-button-color: #4D93D1;
+$woodmart-button-color-hover: #2b6ca6;
+$woodmart-button-alt-color: #A8D14D;
+$woodmart-button-alt-color-hover: #9ec151;
+$woodmart-gray-color: #f9f9f9;
+
+$woodmart-vc-element-title: #444;
+$woodmart-vc-options-border: 4px;
+
+$woodmart-notice-info: #4D93D1;
+$woodmart-notice-success: #A8D14D;
+$woodmart-notice-warning: #f9b826;
+$woodmart-notice-critical: #d74646;
+
+// ------------------------------------------
+// ANIMATIONS
+// ------------------------------------------ 
+
+//**** IMPORT LOADING ****//
+
+@-webkit-keyframes woodmart_loading {
+    0% {
+        left: -20px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes woodmart_loading {
+    0% {
+        left: -20px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+//**** LOADER ROTATE ****//
+
+@-webkit-keyframes woodmart_rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes woodmart_rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+//**** SHAKE BLOCK AFTER IMPORT ****//
+
+@-webkit-keyframes woodmart_shake {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(0, 10px, 0);
+        transform: translate3d(0, 10px, 0);
+    }
+}
+
+@keyframes woodmart_shake {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(0, 10px, 0);
+        transform: translate3d(0, 10px, 0);
+    }
+}
+
+//**** TOOLTIP FADE IN ****//
+
+@keyframes wd-fadeInTooltip {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+//**** ELEMENT ANIMATIONS ****//
+
+@-webkit-keyframes wd-shopSlideFromBottom {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-shopSlideFromBottom {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-SlideFromTop {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-SlideFromTop {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-SlideFromBottom {
+    from {
+        transform: translateY(150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-SlideFromBottom {
+    from {
+        transform: translateY(150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-SlideFromLeft {
+    from {
+        transform: translateX(-150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-SlideFromLeft {
+    from {
+        transform: translateX(-150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-SlideFromRight {
+    from {
+        transform: translateX(150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-SlideFromRight {
+    from {
+        transform: translateX(150px);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-RightFlipY {
+    from {
+        transform: translateX(100px) rotate3d(0, 1, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+}
+
+@keyframes wd-RightFlipY {
+    from {
+        transform: translateX(100px) rotate3d(0, 1, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+}
+
+@-webkit-keyframes wd-LeftFlipY {
+    from {
+        transform: translateX(-100px) rotate3d(0, 1, 0, -90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+}
+
+@keyframes wd-LeftFlipY {
+    from {
+        transform: translateX(-100px) rotate3d(0, 1, 0, -90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+}
+
+@-webkit-keyframes wd-TopFlipX {
+    from {
+        transform: translateY(-100px) rotate3d(1, 0, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0) rotate3d(1, 0, 0, 0deg) scale(1);
+    }
+}
+
+@keyframes wd-TopFlipX {
+    from {
+        transform: translateY(-100px) rotate3d(1, 0, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0) rotate3d(1, 0, 0, 0deg) scale(1);
+    }
+}
+
+@-webkit-keyframes wd-BottomFlipX {
+    from {
+        transform: translateY(100px) rotate3d(1, 0, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0) rotate3d(1, 0, 0, 0deg) scale(1);
+    }
+}
+
+@keyframes wd-BottomFlipX {
+    from {
+        transform: translateY(100px) rotate3d(1, 0, 0, 90deg) scale(0.6);
+    }
+    to {
+        transform: perspective(1000px) translateY(0) rotate3d(1, 0, 0, 0deg) scale(1);
+    }
+}
+
+@-webkit-keyframes wd-ZoomIn {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-ZoomIn {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes wd-RotateZ {
+    from {
+        transform: matrix3d(0.70592, 0.02465, 0.37557, -0.00062, -0.06052, 0.79532, 0.06156, -0.0001, -0.46435, -0.10342, 0.87958, -0.00146, -21.42566, 4.13698, 4.81749, 0.99197085);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes wd-RotateZ {
+    from {
+        transform: matrix3d(0.70592, 0.02465, 0.37557, -0.00062, -0.06052, 0.79532, 0.06156, -0.0001, -0.46435, -0.10342, 0.87958, -0.00146, -21.42566, 4.13698, 4.81749, 0.99197085);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes flickerAnimation {
+    0% {
+      opacity: 1; }
+    50% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } 
+}
+
+@keyframes flickerAnimation {
+    0% {
+      opacity: 1; }
+    50% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } 
+}
+
+// ------------------------------------------
+// EXTEND
+// ------------------------------------------ 
+
+%woodmart-admin-header {
+    background-color: $woodmart-primary-color;
+    border-bottom: 3px solid lighten($woodmart-primary-color,20%);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: white;
+    }
+}
+
+%woodmart-admin-footer {
+    background-color: $woodmart-gray-color;
+    font-size: 14px;
+}
+
+%woodmart-admin-btn {
+    border-radius: 0px;
+    font-size: 12px;
+    line-height: 1;
+    height: auto;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    border-radius: $woodmart-vc-options-border;
+    font-weight: 600;
+
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+
+    &:active {
+        transform: none;
+    }
+}
+
+%woodmart-admin-btn-primary {
+    border-color: $woodmart-button-color;
+    background-color: $woodmart-button-color;
+    color: white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $woodmart-button-color-hover;
+        background-color: $woodmart-button-color-hover;
+        color: white;
+    }
+
+    &[disabled] {
+        border-color: $woodmart-button-color-hover !important;
+        background-color: $woodmart-button-color-hover !important;
+        color: white !important;
+        opacity: .5;
+    }
+}
+
+%woodmart-admin-btn-alternative {
+    border-color: $woodmart-button-alt-color;
+    background-color: $woodmart-button-alt-color;
+    color: white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $woodmart-button-alt-color-hover;
+        background-color: $woodmart-button-alt-color-hover;
+        color: white;
+    }
+
+    &[disabled] {
+        border-color: $woodmart-button-alt-color-hover !important;
+        background-color: $woodmart-button-alt-color-hover !important;
+        color: white !important;
+        opacity: .5;
+    }
+}
+
+%woodmart-input-style {
+    box-shadow: none;
+    border-radius: $woodmart-vc-options-border;
+
+    &:hover {
+        border-color: #bdbdbd;
+    }
+
+    &:focus {
+        border-color: #999;
+    }
+}
+
+%woodmart-colorpicker-style {
+
+    .wp-color-result {
+        @extend %woodmart-input-style;
+        height: 36px !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        border-color: #ddd;
+        padding-left: 34px;
+    }
+
+    .wp-color-result-text {
+        line-height: 34px;
+        border-left-color: #ddd;
+        border-radius: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .wp-color-picker {
+        margin-left: 6px !important;
+    }
+
+    .wp-picker-input-wrap {
+        
+        .button {
+            height: 36px;
+            box-shadow: none;
+            line-height: 1;
+        }
+    }
+
+    .iris-picker {
+        margin-top: 12px;
+        z-index: 20;
+        border-radius: $woodmart-vc-options-border;
+    }
+}
+
+%woodmart-image-checkmark {
+    content: "\f147";
+    font-family: dashicons;
+    position: absolute;
+    display: block;
+    padding-left: 2px;
+    padding-top: 1px;
+    padding-right: 4px;
+    border-radius: 50%;
+    background-color: $woodmart-button-color;
+    top: -5px;
+    right: -6px;
+    z-index: 15;
+    color: white;
+    text-align: center;
+}
+
+/*====================================================
+=            Simple flexbox layout system            =
+====================================================*/
+@import "compass/css3";
+
+.woodmart-row {
+    margin: 0 -15px;
+    @include display-flex;
+    @include justify-content(flex-start);
+    @include flex-wrap(wrap);
+
+    .woodmart-column {
+        max-width: 600px;
+
+	    &.woodmart-stretch-column {
+	        width: 100%;
+	        max-width: 1300px;
+	    }
+    }
+
+    &.woodmart-two-columns {
+        
+        .woodmart-column {
+            @include flex(0 0 50%);
+            width: 50%;
+        }
+    }
+
+    &.woodmart-three-columns {
+
+        .woodmart-column {
+            @include flex(0 0 33%);
+            width: 33%;
+        }
+    }
+
+    &.woodmart-four-columns {
+
+        .woodmart-column {
+            @include flex(0 0 25%);
+            width: 25%;
+        }
+    }
+}
+
+.woodmart-column  {
+
+    .woodmart-column-inner {
+        @include display-flex;
+        @include box-sizing(border-box);
+        height: 100%;
+        padding: 15px;
+    }
+}
+
+.woodmart-box {
+    background: white;
+    @include display-flex;
+    @include box-sizing(border-box);
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    @include flex(1 1 auto);
+
+    &.woodmart-box-shadow {
+        @include box-shadow(#dedede 0 0 10px);
+    }
+}
+
+.woodmart-box-header {
+    padding: 15px 20px;
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+    @extend %woodmart-admin-header;
+
+    h2 {
+        margin: 0;
+    }
+
+}
+
+.woodmart-box-label {
+    color: white;
+    padding: 5px 16px;
+    font-size: 11px;
+    border-radius: $woodmart-vc-options-border;
+
+    &.woodmart-label-error {
+        background-color: $woodmart-notice-critical;
+    }
+    &.woodmart-label-success {
+        background-color: $woodmart-notice-success;
+    }
+    &.woodmart-label-warning {
+        background-color: $woodmart-notice-warning;
+    }
+}
+
+.woodmart-box-content {
+    padding: 20px;
+    @include flex(1 1 auto);
+}
+
+.woodmart-import-form {
+    @include display-flex;
+    @include box-sizing(border-box);
+    @include flex-wrap(wrap);
+    margin-left: -10px;
+    margin-right: -10px;
+
+    &.form-in-action {
+
+        .button {
+            color: transparent;
+        }
+    }
+}
+
+.woodmart-box-footer {
+    padding: 20px;
+    border-top: 1px solid #f5f5f5;
+    @extend %woodmart-admin-footer;
+
+    p {
+        margin: 0;
+        font-size: 11px;
+        opacity: 0.7;
+    }
+}
+
+/*======================================================
+=                    Xtemos loader                     =
+======================================================*/
+
+.xtemos-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    visibility: hidden;
+
+    .xtemos-loading & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.xtemos-loader-el {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+
+    img {
+        -webkit-animation: woodmart_rotate 1s linear infinite;
+        animation: woodmart_rotate 1s linear infinite;
+        fill: rgba(0, 0, 0, 0.2);
+    }
+
+    &:first-child {
+        -webkit-transform: skew(30deg, 20deg);
+        transform: skew(30deg, 20deg);
+    }
+
+    &:last-child {
+        -webkit-transform: skew(-30deg, -20deg) scale(-1, 1);
+        transform: skew(-30deg, -20deg) scale(-1, 1);
+
+        img {
+            -webkit-animation-delimgay: -0.5s;
+            animation-delay: -0.5s;
+        }
+    }
+}
+
+//**** TEMPLATE LIBRARY LOADER WRAPPER ****//
+
+.xtemos-loader-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    z-index: 20;
+
+    .xtemos-loader {
+        position: sticky;
+        transform: translate(-50%, 20px);
+        -webkit-transform: translate(-50%, 20px);
+    }
+
+    > p {
+        position: sticky;
+        display: inline-block;
+        transform: translate(-50%, 100px);
+        -webkit-transform: translate(-50%, 100px);
+        top: 50%;
+        left: 50%;
+        font-size: 16px;
+        -webkit-animation: flickerAnimation 2s infinite;
+        animation: flickerAnimation 2s infinite;
+    }
+
+    .xtemos-loading & {
+        display: block;
+    }
+}
+
+/*======================================
+=           Post type styles           =
+======================================*/
+
+.column-thumb {
+    width: 60px;
+}
+
+/*======================================
+=            Dashboard page            =
+======================================*/
+
+.woodmart-wrap-content {
+    padding: 20px;
+
+    input[type="text"],
+    select {
+        @extend %woodmart-input-style;
+        height: 36px;
+    }
+
+    h2.nav-tab-wrapper {
+        margin-bottom: 15px;
+    }
+
+    .nav-tab {
+        border-top-left-radius: $woodmart-vc-options-border;
+        border-top-right-radius: $woodmart-vc-options-border;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .button-primary {
+        @extend %woodmart-admin-btn;
+        @extend %woodmart-admin-btn-primary;
+    }
+}
+
+.woodmart-theme-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #efefef;
+    margin: 5px 0 0 0;
+
+    img {
+    	border: none;
+    }
+
+    span {
+    	position: absolute;
+    	top: 66px;
+    	right: 15px;
+    	color: #83B735;
+    	font-weight: 500;
+    	font-size: 16px;
+    }
+
+    i {
+        font-size: 100px;
+        text-align: center;
+        line-height: 1;
+        font-weight: 900;
+        margin-bottom: 10px;
+        display: block;
+        font-family: Lato;
+        font-style: normal;
+    }
+}
+
+.about-wrap {
+	margin: 25px 20px 0 20px;
+	max-width: 1170px;
+
+	h1 {
+		margin: .2em 215px 0 0;
+	}
+
+	.about-text {
+		margin: 1em 215px 1em 0;
+	}
+}
+
+.agree-text{
+    font-size: 11px;
+    opacity: 0.7;
+    margin-left: 24px;
+    margin-top: 0;
+    max-width: 70%;
+}
+
+.woodmart-form .agree-label{
+    margin-bottom: 5px;
+}
+
+.redux-actions {
+
+    .button {
+        @extend %woodmart-admin-btn;
+        margin-right: 10px;
+
+        &.button-primary {
+            @extend %woodmart-admin-btn-primary;
+        }
+    }
+}
+
+.woodmart-msg {
+    padding-top: .5em !important;
+    padding-bottom: 1em !important;
+
+    &.updated {
+        border-left-color: $woodmart-button-color;
+    }
+
+    > a {
+        font-weight: 600;
+    }
+}
+
+.woodmart-request-credentials,
+.woodmart-request-credentials + .woodmart-msg {
+    margin-left: 180px;
+    margin-right: 20px;
+}
+
+.woodmart-request-credentials {
+    padding-top: 1px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+
+    &:empty {
+        display: none;
+    }
+}
+
+.woodmart-request-credentials .woodmart-msg,
+.woodmart-request-credentials + .woodmart-msg {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    .woodmart-warning {
+        margin-bottom: 0;
+    }
+}
+
+/*==============================================
+=            Activation form styles            =
+==============================================*/
+
+.woodmart-activation-form {
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    small {
+        display: block;
+        margin: -5px 0 10px;
+    }
+
+    input[type="text"] {
+        display: block;
+        width: 100%;
+        padding: 6px 10px;
+    }
+}
+
+/*==============================================
+=             CSS Generator form               =
+==============================================*/
+
+.woodmart-generator-form {
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $woodmart-vc-element-title;
+    }
+    
+    .woodmart-column-inner {
+        display: block;
+    }
+}
+
+.css-options-box {
+
+    h3 {
+        margin-top: 0;
+    }
+
+    .css-checkbox {
+
+        label {
+            display: inline-block;
+            user-select: none;
+        }
+
+        input[type=checkbox] {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #c5c5c5;
+            border-radius: 3px;
+            margin-bottom: -4px;
+            box-shadow: none;
+            transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            box-shadow: 0 0px 5px transparent;
+
+            &:checked {
+                border: 2px solid $woodmart-button-color;
+                background-color: $woodmart-button-color;
+
+                &:before {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            &:disabled {
+                opacity: .5;
+                cursor: default;
+
+                + label {
+                    opacity: .5;
+                    cursor: default;
+                }
+            }
+
+            &:hover:not(:disabled) {
+                border: 2px solid $woodmart-button-color;
+                box-shadow: 0 0px 5px rgba(0,0,0,0.15);
+            }
+
+            &:before {
+                content: "\f147";
+                display: inline-block;
+                color: #fff;
+                opacity: 0;
+                font-family: dashicons;
+                -webkit-transform: scale(.5);
+                transform: scale(.5);
+                transition: all .15s ease-out;
+                -webkit-transition: all .15s ease-out;
+                position: absolute;
+                left: 0;
+                top: 1px;
+                height: 18px;
+                line-height: 19px;
+            }
+        }
+        
+        .css-checkbox {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            label {
+                font-weight: normal;
+                margin-bottom: 0;
+            }
+
+            .css-checkbox  {
+                
+                label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    > .css-checkbox {
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        border: 1px solid #e8e8e8;
+        padding: 15px;
+
+        + .css-checkbox {
+            margin-top: 15px;
+        }
+
+        > .css-checkbox-children {
+            margin-bottom: 0;
+        }
+    }
+
+    .css-description {
+        margin-bottom: 10px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+
+.css-checkbox-children {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.css-file-actions {
+
+    a {
+        &.button-primary {
+            border-color: #d74646;
+            background-color: #d74646;
+    
+            &:hover,
+            &:focus {
+                border-color: #ab2525;
+                background-color: #ab2525;
+            }
+        }
+    }
+
+    .css-update-button {
+        margin-right: 7px;
+    }
+}
+
+.css-file-information {
+    margin-top: 40px;
+
+    h3 {
+
+        span {
+            color: $woodmart-vc-element-title;
+        }
+    }
+
+    table {
+        margin-bottom: 20px;
+        font-size: 14px;
+        border-left: 1px solid #efefef;
+        border-top: 1px solid #efefef;
+        width: 500px;
+        max-width: 100%;
+
+        td,
+        th {
+            padding: 15px 20px;
+            border-right: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+        }
+
+        th {
+            text-align: left;
+            width: 30%;
+        }
+    }
+}
+
+/*======================================================
+=            Styles for warnings and errors            =
+======================================================*/
+
+.woodmart-error,
+.woodmart-success,
+.woodmart-warning,
+.woodmart-notice {
+    padding: 20px 25px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: $woodmart-vc-options-border;
+
+    .vc_edit-form-tab & {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+    &.small {
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        width: 250px;
+        max-width: 100%;
+        font-size: 12px;
+    }
+    
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: white;
+    }
+
+    br:last-child {
+        display: none;
+    }
+}
+
+.woodmart-success {
+    background-color: $woodmart-notice-success;
+}
+
+.woodmart-error {
+    background-color: $woodmart-notice-critical;
+}
+
+.woodmart-warning {
+    background-color: $woodmart-notice-warning;
+}
+
+.woodmart-notice {
+    background-color: $woodmart-notice-info;
+}
+
+/*======================================================
+=             Styles needed for wp-admin               =
+======================================================*/
+
+.woodmart-image-src {
+    max-width: 150px;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+/*======================================================
+=                Import section styles                 =
+======================================================*/
+
+.woodmart-import-page {
+    margin: 0;
+    padding: 0;
+
+    #woodmart_version {
+        width: 250px;
+        max-width: 100%;
+    }
+
+    .description {
+        max-width: 250px;
+        font-size: 12px;
+    }
+
+    .woodmart-response {
+        @include flex(0 1 100%);
+        @include box-sizing(border-box);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .page-preview {
+        @include flex(0 1 50%);
+        @include box-sizing(border-box);
+        padding-left: 10px;
+        padding-right: 10px;
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            padding: 3px;
+            border: 1px solid #efefef;
+            @include box-sizing(border-box);
+            border-radius: $woodmart-vc-options-border;
+        }
+    }
+
+    .import-form-fields {
+        @include flex(0 1 50%);
+        @include box-sizing(border-box);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .woodmart_version {
+        width: 100%;
+        // line-height: 34px;
+        // height: 34px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .submit {
+        padding: 0;
+        margin-bottom: 0;
+        height: 35px;
+
+        .import-base & {
+            margin-top: 0;
+        }
+    }
+
+    .button {
+        width: 100%;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    #wpbody-content & {
+
+        &.metabox-holder {
+            padding-top: 0px;
+        }
+    }
+}
+
+.woodmart-import-progress {
+    position: relative;
+    display: none;
+    position: relative;
+    height: 35px;
+    background: $woodmart-button-color-hover;
+    margin-top: -35px;
+    border-radius: $woodmart-vc-options-border;
+
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        content: attr(data-progress) "%";
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+    }
+
+    div {
+        transition: 0.2s all linear;
+        position: absolute;
+        height: 35px;
+        background-color: lighten($woodmart-button-color,2%);
+        overflow: hidden;
+        border-radius: $woodmart-vc-options-border;
+    }
+
+    + p {
+        margin-top: 15px;
+    }
+
+    &.animated div:after {
+        content: '123';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -20px;
+        background-color: lighten($woodmart-button-color,5%);
+        height: 35px;
+        font-size: 0;
+        width: 20px;
+        max-width: 50%;
+        -webkit-animation: woodmart_loading 2s infinite;
+        animation: woodmart_loading 2s infinite;
+    }
+}
+
+#woodmart-import-form.form-in-action {
+    .page-preview {
+        opacity: 0.5;
+        cursor: default;
+    }
+    p {
+        opacity: 0.5;
+        cursor: default;
+    }
+    #woodmart_version {
+        opacity: 0.5;
+        cursor: default;
+    }
+    .button {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+.import-base,
+.import-versions,
+.import-pages,
+.import-elements {  
+  -webkit-transition: 0.6s all ease-in-out;
+  -o-transition: 0.6s all ease-in-out;
+  transition: 0.6s all ease-in-out;
+}
+
+.imported-full .import-base,
+.import-versions,
+.import-pages,
+.import-elements  {
+    cursor:no-drop;
+
+    input, 
+    select {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .button {
+        opacity: 0.5;
+    }
+
+   .page-preview {
+        opacity: 0.5;
+   }
+}
+
+.imported-base .import-versions,
+.imported-base:not(.imported-full) .import-pages,
+.imported-base:not(.imported-full) .import-elements {
+  pointer-events: inherit;
+  cursor:default;
+
+   input, 
+   select {
+        pointer-events: inherit;
+        opacity: 1;
+   }
+
+    .button {
+        opacity: 1;
+    }
+
+   .page-preview {
+        opacity: 1;
+   }
+}
+
+.imported-full.right-after-import {
+
+    .import-versions {
+        -webkit-animation: woodmart_shake 1s ease-in-out;
+        animation: woodmart_shake 1s ease-in-out;
+    }
+}
+
+.base-imported-alert {
+  display: none;
+}
+
+.imported-base {
+
+    .base-imported-alert {
+        display: block;
+        margin-top: -20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        background-color: #ECFFE8;
+        border-bottom: 2px solid #378A11;
+        color: rgb(6, 91, 5);
+        border-radius: 0;
+    } 
+}
+
+.choose-version-warning {
+    display: none;
+}
+
+.imported-full {
+
+    &.right-after-import {
+
+        .choose-version-warning {
+            display: block;
+        }
+    }
+}
+
+.full-import-box {
+    
+    fieldset {
+        position: relative;
+        padding: 10px 15px 15px 20px;
+        border: solid 2px $woodmart-button-color;
+        margin-bottom: 20px;
+    }
+
+    legend {
+        padding-left: 15px;
+        padding-right: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+}
+
+.imported-base,
+.imported-full {
+
+    .full-import-box {
+        display: none;
+    }
+}
+
+/*======================================================
+=                 Menu custom fields                   =
+======================================================*/
+
+.nmi-item-custom-fields {
+    display: none;
+    overflow: hidden;
+    clear: both;
+    padding: 0;
+    h4 {
+        margin: 20px 0 10px;
+    }
+}
+.nmi-div {
+    overflow: hidden;
+    clear: both;
+    color: #a6a6a6;
+    a {
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            text-decoration: underline;
+        }
+        &.link-with-image {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+}
+.nmi-upload-link {
+    margin: 10px 0;
+}
+
+.nmi-current-image img {
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #efefef;
+}
+
+/*======================================================
+=                   Redux admin panel                  =
+======================================================*/
+
+.redux-container {
+    background-image: none;
+    background-color: $woodmart-sidebar-color;
+
+    select {
+        height: 37px;
+    }
+
+    input.readonly, 
+    input[readonly], 
+    textarea.readonly, 
+    textarea[readonly] {
+        background-color: white;
+    }
+
+    //REMOVE EMPTY TITLE BLOCK
+
+    th {
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    //REMOVE BORDER FROM OPTION
+
+    tr {
+
+        &.without-border {
+            border-bottom: none !important;
+         }    
+    }
+
+    #redux-header {
+        @extend %woodmart-admin-header;
+
+        .display_header {
+            margin: 20px 20px 20px 70px;
+
+            h2 {
+            	position: relative;
+            	z-index: 2;
+                margin: 0;
+                font-size: 30px;
+                line-height: 1;
+                padding-right: 15px;
+            }
+
+            span {
+                color: white;
+            }
+
+            .redux-dev-mode-notice-container {
+                left: auto;
+                right: 26px;
+                top: 50%;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+            }
+
+            &:before {
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    top: 50%;
+			    left: 18px;
+			    transform: translateY(-50%);
+			    -webkit-transform: translateY(-50%);
+			    z-index: 1;
+			    background-image: url(../images/theme-admin-icon.svg);
+			    background-repeat: no-repeat;
+			    background-size: 50px 50px;
+    			width: 50px;
+    			height: 50px;
+            }
+        }
+    }
+
+    .rAds {
+        opacity: 0;
+
+        a, img {
+            display: none;
+        }
+    }
+
+    .button {
+        @extend %woodmart-admin-btn;
+        margin-top: 0;
+        border-radius: $woodmart-vc-options-border; 
+    }
+
+    .button-primary {
+        @extend %woodmart-admin-btn;
+        @extend %woodmart-admin-btn-primary;
+        // @extend %woodmart-admin-btn-alternative;
+    }
+
+    .button-secondary {
+        @extend %woodmart-admin-btn;
+    }
+
+    .button-alternative {
+        @extend %woodmart-admin-btn;
+        @extend %woodmart-admin-btn-alternative;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .button-alternative {
+        border-radius: $woodmart-vc-options-border; 
+    }
+
+    .redux-action_bar {
+
+        .spinner {
+            margin-top: 6px;
+        }
+
+        .button {
+            line-height: 1;
+        }
+    }
+
+    #redux-sticky {
+
+        #info_bar {
+            height: 38px; 
+        }
+    }
+
+    #info_bar {
+        padding: 9px 10px 3px 6px;  
+    }
+
+    .redux-sidebar {
+        width: 232px;
+
+        .redux-group-tab-link-a {
+
+            i {
+                color: rgba(255, 255, 255,.2);
+            }
+        }
+
+        .redux-group-menu {
+
+            li {
+
+                a {
+                    padding: 16px 4px 16px 14px;
+                    font-weight: 400;
+                    color: rgba(255,255,255,.7);
+                    border-bottom-color: rgba(255, 255, 255,.05);
+                    opacity: 1;
+
+                    &:hover {
+                        background-color: rgba(255,255,255,.1);
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+            }
+
+            li.active,
+            li.activeChild {
+
+                > a,
+                > a:hover {
+                    width: auto;
+                    background-color: rgba(255,255,255,.1);
+                    color: white;
+                }
+            }
+
+            li.active {
+
+                &.hasSubSections {
+
+                    a {
+                        background: $woodmart-primary-color;
+                    }
+
+                    ul.subsection {
+
+                        li {
+
+                            a {
+                                background: darken($woodmart-sidebar-color,2%);
+
+                                &:hover {
+                                    color: rgba(255, 255, 255, 0.9);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+            li.activeChild {
+                
+                &.hasSubSections {
+
+                    a {
+                        background-color: rgba(255,255,255,.1);
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+
+                    ul.subsection {
+
+                        li {
+
+                            a {
+                                color:  rgba(255, 255, 255, 0.9);
+                                background: darken($woodmart-sidebar-color,2%);
+
+                                &:hover {
+                                    color:  rgba(255, 255, 255, 0.9);
+                                }
+                            }
+
+                            &.active {
+
+                                a {
+                                    background: $woodmart-primary-color;
+                                    text-shadow: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .redux-main {
+        margin-left: 232px;
+
+        input {
+            line-height: 1;
+
+            &.redux-color {
+                margin-left: 0;
+                float: none;
+                width: 130px;
+
+            }
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            margin-top: 0;
+            height: 36px;
+        }
+
+        input[type="text"],
+        input[type="number"],  
+        select,
+        textarea {
+            @extend %woodmart-input-style;
+            // box-shadow: none;
+            // border-radius: $woodmart-vc-options-border;
+            padding: 8px 6px;
+    
+            // &:hover {
+            //     border-color: #bdbdbd;
+            // }
+    
+            // &:focus {
+            //     border-color: #999;
+            // }
+        }
+
+        .regular-text {
+            width: 40%;
+        }
+
+        .input-append,
+        .input-prepend {
+
+            .add-on {
+                height: 36px;
+                line-height: 32px;
+                min-width: 26px;
+                box-sizing: border-box;
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                background: #f6f6f6;
+                color: #8a8a8a;
+                text-shadow: none;
+                border: 1px solid #ddd;
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+            }
+        }
+
+        .redux-group-tab {
+
+            > h2 {
+                font-size: 18px;
+                text-transform: uppercase;
+                background: #f3f3f3;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: -8px;
+                margin-bottom: 0;
+                margin-left: -20px;
+                margin-right: -20px;
+                border-bottom: 1px solid #dedede;
+            }
+        }
+
+        //**** WOODMART SETTINGS SELECT2 ****//
+
+        .redux-container-typography {
+    
+            // .select2-container {
+            //     min-width: auto !important;
+            // }
+
+            .redux-typography-container {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+
+                div.select_wrapper {
+                    -ms-flex-preferred-size: 50%;
+                    flex-basis: 50%;
+                    float: none;
+                    max-width: 50% !important;
+                    width: 50% !important;
+                    padding-right: 10px !important;
+                    margin-top: 0 !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    margin-bottom: 5px !important;
+
+                    &.typography-align {
+                        margin-right: 50% !important;
+                    }
+                }
+
+               .input_wrapper {
+                    margin-left: 0px;
+
+                    // input.mini {
+                    //      border-radius: 0;
+                    // }
+               }
+            }
+        }
+        
+        .redux-field-container {
+
+            .input_wrapper {
+            
+                input {
+                    
+                    &.mini {
+                        height: 36px;
+                    }
+                }
+            }
+
+            .upload {
+                width: 40%;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            .upload_button_div {
+                display: inline-block;
+                vertical-align: top;
+
+                .button {
+                    padding: 11px 15px;
+                }
+            }
+            
+            .input-prepend {
+
+               input {
+                   padding-top: 4px;
+                   padding-bottom: 3px;
+               }
+           }
+        }
+    }
+
+    .redux-notice-field {
+        padding: 10px 15px;
+        margin-top: 20px;
+        box-shadow: none;
+        border: none;
+        // border-width: 2px;
+        // border-color: #e4e4e4;
+        // border-style: solid;
+        background-color: #F7F7F7;
+        border-radius: $woodmart-vc-options-border;
+        color: white;
+
+        &.redux-info {
+            background-color: $woodmart-notice-info;
+        }
+
+        &.redux-success {
+            background-color: $woodmart-notice-success;
+        }
+
+        &.redux-warning {
+            background-color: $woodmart-notice-warning;
+        }
+
+        &.redux-critical {
+            background-color: $woodmart-notice-critical;
+        }
+
+        a {
+            color: white;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .redux-container-media {
+
+        .upload {
+            margin-bottom: 8px;
+        }
+    }
+
+    .redux-container-editor {
+
+        .wp-editor-container {
+            border-radius: 0;
+        }
+
+        .add_media {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .redux-field-container {
+
+        .wp-editor-area {
+            width: 100%;
+        }
+    }
+
+    .redux-container-switch .cb-enable.selected, 
+    .redux-field-container .ui-buttonset .ui-state-active {
+        background-color: $woodmart-button-alt-color !important;
+        border-color: $woodmart-button-alt-color !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    .select_wrapper {
+
+        &.spacing-units {
+
+            .redux-spacing-units {
+                min-width: 80px !important;
+            }
+        }
+    }
+
+    //**** WOODMART SETTINGS COLOR PICKER ****//
+
+    .wp-picker-container {
+        padding: 0 !important;
+        @extend %woodmart-colorpicker-style;
+            
+        .wp-color-result-text {
+            padding: 0 10px;
+            color: #8a8a8a;
+        }
+    }
+
+    .wp-picker-input-wrap {
+        label {
+            display: inline-block;
+            margin-top: 0 !important;
+        }
+    }
+
+    .color-transparency-check {
+        height: 36px;
+        line-height: 36px;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+        vertical-align: top;
+        padding-top: 0;
+    }
+
+    //**** WOODMART SETTINGS IMAGE SELECT ****//
+
+    .redux-container-image_select {
+
+        label.redux-image-select {
+            position: relative;
+
+            img {
+                border-width: 3px;
+                border-color: #d9d9d9;
+                border-radius: $woodmart-vc-options-border;
+                -webkit-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+            }
+
+            &.redux-image-select-selected {
+
+                img {
+                    border-color: $woodmart-button-color;
+                }
+
+                &:before {
+                    @extend %woodmart-image-checkmark;
+                }
+            }
+
+            &:not(.redux-image-select-selected):hover {
+
+                img {
+                    border-color: #b9b9b9;
+                }
+            }
+        }
+    }
+
+    //**** WOODMART SETTINGS BUTTON SET ****//
+
+    .buttonset {
+
+        > label,
+        .ui-button {
+            height: 37px;
+            padding: 0px 10px;
+            background-image: none !important;
+            text-shadow: none !important;
+            min-width: 45px;
+            text-align: center;
+
+            background-color: #e3e3e3;
+            font-weight: 600;
+            line-height: 37px;
+            color: #444;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+            &:not(:last-child) {
+                margin-right: 2px !important;
+            }
+
+            &:nth-child(2) {
+                border-top-left-radius: $woodmart-vc-options-border;
+                border-bottom-left-radius: $woodmart-vc-options-border;
+            }
+    
+            &:last-child {
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+            }
+        }
+
+        .ui-button {
+            border-radius: 0;
+            border: none !important;
+            -webkit-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+            transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+            span {
+                -webkit-transition: color .2s ease-in-out;
+                transition: color .2s ease-in-out;
+            }
+
+            &:active {
+                transform: none;
+                -webkit-transform: none;
+            }
+
+            &.ui-state-default {
+                background-color: #e3e3e3 !important;
+            }
+
+            &.ui-state-hover {
+                background-color: #7a7a7a !important;
+                font-weight: 600;
+            }
+
+            &.ui-state-active {
+                background-color: $woodmart-button-alt-color !important;
+            }
+
+            &.ui-state-hover,
+            &.ui-state-active {
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+
+        input[checked="checked"]:not(.ui-helper-hidden-accessible) + label {
+            background-color: $woodmart-button-alt-color !important;
+            color: white;
+        }
+
+        .buttonset-item {
+            display: none;
+        }
+    }
+
+    //**** WOODMART SETTINGS SWITCH ****//
+
+    .switch-options {
+
+        .cb-enable,
+        .cb-disable {
+            height: 37px;
+            border-radius: 0px;
+            color: #444;
+            border-radius: 0;
+            border: none;
+            background-color: #e3e3e3 !important;
+            background-image: none !important;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            min-width: 45px;
+            text-align: center;
+
+            span {
+                display: inline-block;
+                float: none;
+                font-weight: 600;
+                line-height: 37px;
+            }
+
+            &:not(.selected):hover {
+                color: #fff;
+                background-color: #7a7a7a !important;
+            }
+        }
+
+        .cb-enable {
+            margin-right: 2px !important;
+            border-top-left-radius: $woodmart-vc-options-border;
+            border-bottom-left-radius: $woodmart-vc-options-border;
+
+            &.selected {
+                background-color: $woodmart-button-alt-color !important;
+                color: #fff;
+            }
+        }
+
+        .cb-disable {
+            border-top-right-radius: $woodmart-vc-options-border;
+            border-bottom-right-radius: $woodmart-vc-options-border;
+
+            &.selected {
+                background-color: #b1b1b0 !important;
+                background-image: none !important;
+                color: #fff;
+            }
+        }
+    }
+
+    //**** WOODMART SETTINGS SLIDER ****//
+
+    .redux-container-slider {
+
+        .redux-slider-container {
+            margin-left: 30px;
+            background-color: $woodmart-button-color !important;
+            background-image: none !important;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            height: 4px;
+            width: calc(40% - 30px);
+            cursor: pointer;
+        }
+
+        .noUi-background {
+            box-shadow: none;
+            background-color: #f1f1f1;
+            border-radius: 0;
+        }
+
+        .noUi-handle {
+            width: 12px;
+            height: 12px;
+            left: -6px;
+            border: solid 2px $woodmart-button-color;
+            border-radius: 50%;
+            box-sizing: content-box;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 0 2px #89bce8;
+            }
+
+            &.noUi-active {
+                box-shadow: 0 0 0 3px #89bce8;
+            }
+            
+            &:before,
+            &:after {
+                display: none;;
+            }
+        }
+    }
+
+    #redux-footer {
+        
+        .button:not(.button-primary) {
+            margin-left: 4px;
+        }
+    }
+
+    .redux-container-sorter {
+        
+        h3 {
+            text-transform: capitalize;
+        }
+
+        ul {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            padding: 20px;
+            border-radius: 4px;
+
+            li {
+                background-image: none;
+                border: none;
+                font-weight: 600;
+                
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+// SELECT2 GLOBAL OPTIONS
+
+.toplevel_page__options {
+
+    .select2-container {
+
+        .select2-choice {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            height: 36px;
+            line-height: 36px;
+            color: #6a6a6a;
+            background: white;
+
+            abbr {
+                top: 10px;
+                right: 40px;
+                width: 16px;
+                height: 16px;
+                font-size: 16px;
+                line-height: 1;
+                font-family: dashicons;
+                text-decoration: inherit;
+                font-weight: 400;
+                font-style: normal;
+                vertical-align: top;
+                text-align: center;
+                transition: color .1s ease-in;
+                -webkit-font-smoothing: antialiased;
+                color: #8a8a8a;
+                background-image: none !important;
+
+                &:hover {
+                    color: #565656;
+                }
+
+                &:before {
+                    content: "\f335";
+                }
+            }
+
+            .select2-arrow {
+                background: #f6f6f6;
+                border-left: 1px solid #e2e2e2;
+                width: 32px;
+
+                b {
+                    width: 32px;
+                    height: 32px;
+                    line-height: 36px;
+                    font-size: 16px;
+                    font-family: dashicons;
+                    text-decoration: inherit;
+                    font-weight: 400;
+                    font-style: normal;
+                    vertical-align: top;
+                    text-align: center;
+                    transition: color .1s ease-in;
+                    -webkit-font-smoothing: antialiased;
+                    color: #8a8a8a;
+                    background-image: none !important;
+
+                    &:hover {
+                        color: #565656;
+                    }
+
+                    &:before {
+                        content: "\f347";
+                    }
+                }
+            }
+        }
+
+        &.select2-dropdown-open {
+
+            .select2-choice {
+                border-radius:  3px 3px 0 0;
+            }
+
+            &.select2-drop-above {
+
+                .select2-choice {
+                    border-radius:  0 0 3px 3px;
+                }
+            }
+        }
+
+        &.select2-allowclear {
+
+            .select2-choice {
+
+                .select2-chosen {
+                    margin-right: 56px;
+                }
+            }
+        }
+    }
+
+    .select2-dropdown-open {
+
+        .select2-choice {
+
+            .select2-arrow {
+
+                b {
+
+                    &:before {
+                        content: "\f343";
+                    }
+                }
+            }
+        }
+    }
+
+    .select2-search {
+        position: relative;
+
+        input {
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            padding: 8px 20px 8px 5px;
+            background-image: none !important;
+
+            &:focus {
+                margin-top: 5px;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+        }
+
+        &:before {
+            content: "\f179";
+            position: absolute;
+            top: 9px;
+            right: 6px;
+            background: none;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            font-family: dashicons;
+            text-decoration: inherit;
+            font-weight: 400;
+            font-style: normal;
+            vertical-align: top;
+            text-align: center;
+            transition: color .1s ease-in;
+            -webkit-font-smoothing: antialiased;
+            color: #c1c1c1
+        }
+    }
+
+    .select2-dropdown-open.select2-drop-above .select2-choice, 
+    .select2-dropdown-open.select2-drop-above .select2-choices,
+    .select2-drop.select2-drop-above.select2-drop-active,
+    .select2-drop-active {
+        border: 1px solid #e2e2e2;
+    }
+
+    .select2-container {
+
+        &:hover {
+
+            .select2-choice,
+            .select2-choices {
+                border-color: #bdbdbd;
+            }
+        }
+    }
+
+    .select2-container-active {
+
+        .select2-choice,
+        .select2-choices {
+            box-shadow: 0 0 4px 2px #f1f1f1;
+        }
+    }
+
+    .select2-drop {
+        box-shadow: none !important;
+    }
+
+    .select2-results {
+        padding: 0;
+        margin-right: 0;
+
+        li {
+            color: #8a8a8a;
+            margin-bottom: 0;
+
+            &.select2-result-unselectable {
+                color: #404040;
+            }
+        }
+
+        .select2-highlighted {
+            background: $woodmart-button-color;
+            color: white;
+        }
+
+        .select2-result-label {
+            padding: 7px 9px 7px 15px;
+        }
+    }
+
+    .select2-no-results {
+        padding: 7px;
+    }
+
+    .select2-container-multi {
+
+        .select2-choices {
+            background: white;
+            border-radius: 3px;
+            border: 1px solid #e2e2e2;
+            min-height: 36px;
+
+            .select2-search-choice {
+                border: 0px solid #e2e2e2;
+                background: $woodmart-button-color;
+                padding: 6px 10px 6px 18px;
+                box-shadow: none;
+                border-radius: 0;
+                color: #fff;
+                font-size: 12px;
+                margin: 6px 0 0 6px !important;
+                border-radius: 3px;
+            }
+
+            .select2-search-field {
+
+                input {
+                    padding: 8px;
+                }
+            }
+        }
+
+        &.select2-container-active,
+        &.select2-dropdown-open {
+            
+            .select2-choices {
+                border-color: #e2e2e2;
+            }
+        }
+    }
+
+    .select2-search-choice-close {
+        background: none;
+        width: 16px;
+        height: 16px;
+        line-height: 18px;
+        font-size: 12px;
+        font-family: dashicons;
+        text-decoration: inherit;
+        font-weight: 400;
+        font-style: normal;
+        vertical-align: top;
+        text-align: center;
+        transition: color .1s ease-in;
+        -webkit-font-smoothing: antialiased;
+        color: #fff;
+        background-image: none !important;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:before {
+            content: "\f335";
+        }
+    }
+
+    .redux-main {
+
+        .redux-typography-container {
+
+            .select_wrapper {
+                
+                .redux-typography {
+                    height: 36px !important;
+                }
+            }
+        }
+    } 
+}
+
+
+// OPTION IMAGE SELECTOR
+
+// #woodmart_options-btns_accent_style,
+// #woodmart_options-btns_shop_style,
+// #woodmart_options-btns_default_style,
+// #woodmart_options-label_shape,
+// #woodmart_options-single_product_layout,
+// #woodmart_options-shop_layout,
+// #woodmart_options-blog_layout,
+// #woodmart_options-main_layout,
+// #woodmart_options-products_hover,
+// #woodmart_options-categories_design,
+// #woodmart_options-portoflio_style,
+// #woodmart_options-product_design,
+// #woodmart_options-page-title-design,
+// #woodmart_options-form_fields_style,
+// #woodmart_options-add_to_cart_action,
+// #woodmart_options-thums_position,
+// #woodmart_options-single_product_style,
+// #woodmart_options-quick_view_layout,
+// #woodmart_options-footer-layout,
+.redux-container-image_select, {
+
+    ul {
+
+        &.redux-image-select {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            margin-left: -5px !important;
+            margin-right: -5px !important;
+        }
+    }
+
+    .redux-image-select {
+
+        > li {
+            box-sizing: border-box;
+            margin-bottom: 10px !important;
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+
+        img {
+            box-sizing: border-box;
+        }
+    }
+}
+
+#woodmart_options-portoflio_style,
+#woodmart_options-products_hover,
+#woodmart_options-categories_design {
+
+    .redux-image-select {
+
+        img {
+            padding: 10px;
+        }
+    }
+}
+
+
+#woodmart_options-products_hover,
+#woodmart_options-categories_design,
+#woodmart_options-portoflio_style,
+#woodmart_options-thums_position,
+#woodmart_options-single_product_style,
+#woodmart_options-product_design,
+#woodmart_options-page-title-design,
+#woodmart_options-add_to_cart_action,
+#woodmart_options-quick_view_layout,
+#woodmart_options-footer-layout {
+    
+    .redux-image-select {
+
+    	> li {
+        	width: 20%;
+        	max-width: 20%;
+        	-ms-flex-preferred-size: 20%;
+        	flex-basis: 20%;  
+    	} 	
+    }
+}
+
+#woodmart_options-btns_accent_style,
+#woodmart_options-btns_default_style,
+#woodmart_options-btns_shop_style,
+#woodmart_options-single_product_layout,
+#woodmart_options-shop_layout,
+#woodmart_options-blog_layout,
+#woodmart_options-main_layout {
+
+    .redux-image-select {
+
+    	> li {
+        	-ms-flex-preferred-size: 140px;
+        	flex-basis: 140px;
+    	} 	
+    }
+}
+
+#woodmart_options-form_fields_style {
+
+    .redux-image-select {
+
+    	> li {
+        	-ms-flex-preferred-size: 300px;
+        	flex-basis: 300px;
+    	} 	
+    }
+}
+
+// WOODMART TITLE
+
+.woodmart-settings-title {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+}
+
+.woodmart-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.woodmart-title-desc {
+    margin-bottom: 0;
+}
+
+// CUSTOM FONTS PAGE
+
+.woodmart-multi-fonts {
+    margin-top: 0;
+}
+
+.redux-container-woodmart_multi_fonts {
+
+    .woodmart-miltifont-repeater {
+        margin-bottom: 20px !important;
+    }
+}
+
+.woodmart-miltifonts-accordion {
+    height: 30px;
+    line-height: 30px !important;
+    margin-bottom: 0;
+    cursor: pointer;
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+
+    border: none !important;
+    
+    span {
+        opacity: .8;
+        transition: opacity .3s ease;
+    }
+
+    &:hover {
+
+        span {
+            opacity: 1;
+        }
+    }
+}
+
+.woodmart-miltifont-repeater {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 1px 2px #efefef;
+    padding: 15px 20px;
+    max-width: 800px;
+    border-radius: $woodmart-vc-options-border;
+
+    h4 {
+        margin-top: 0;
+    }
+
+    input,
+    select {
+        width: 60% !important;
+    }
+
+    fieldset {
+        padding: 0 !important;
+    }
+
+    > div {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s ease-in;
+    }
+
+    .icon {
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 12px;   
+    }
+
+    &.active {
+        border-bottom: 1px solid #E7E7E7;
+
+        > div {
+            max-height: 1000px;
+            opacity: 1;
+            visibility: visible;             
+        }
+
+        .woodmart-miltifonts-accordion {
+
+            span {
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .miltifont-fields {
+            margin-top: 15px;
+            padding-top: 20px;
+            // border-top: 1px solid #E7E7E7;
+        }
+    }
+}
+
+.miltifont-fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid #E7E7E7;
+}
+
+.miltifont-field {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.woodmart-multi-fonts-remove {
+    float: right;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ef521d;
+    font-weight: 500;
+
+    &:hover {
+        color: #d43803;
+    }
+    
+    &:before {
+        content: "\f182";
+        font-family: dashicons;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        height: 16px;
+        margin-right: 5px;
+        line-height: 1;
+        margin-top: -4px;
+    }
+}
+
+// ADVANCED TYPOGRAPHY STYLES
+
+.redux-container .redux-main .woodmart-atf-section .input-append {
+    margin-bottom: 0;
+    float: none;
+}
+
+.woodmart-atf-responsive-controls,
+.woodmart-atf-color-point {
+    min-width: 33%;
+}
+
+.woodmart-atf-responsive-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.woodmart-atf-color-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    .woodmart-atf-color-point {
+        margin-right: 20px;
+    }
+}
+
+.woodmart-atf-responsive-opener {
+    margin-bottom: 8px;
+    margin-right: 6px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s ease-in;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+
+    &:hover {
+        color: $woodmart-button-color;
+    }
+
+    &:before {
+        content: "\f345";
+    }
+}
+
+.woodmart-atf-size-container,
+.woodmart-atf-height-container{
+
+    [type="number"] {
+        width: 50px;
+    }
+}
+
+.woodmart-atf-size-point,
+.woodmart-atf-color-point,
+.woodmart-atf-height-point {
+
+    > label {
+        display: block !important;
+    }
+}
+
+.woodmart-atf-size-point label:before,
+.woodmart-atf-height-point label:before {
+    content: "\f472";    
+    margin-right: 5px;
+    margin-top: 3px;
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s ease-in;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+}
+
+.woodmart-atf-control-tablet label:before {
+    content: "\f471";    
+}
+
+.woodmart-atf-control-mobile label:before {
+    content: "\f470";
+}
+
+/* Typography sections */
+
+.woodmart-atf-section {
+    position: relative;
+    max-width: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 1px 2px #efefef;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: $woodmart-vc-options-border;
+
+    label {
+        font-weight: 600;
+        color: #333;
+        padding-bottom: 5px;
+    }
+
+    .woodmart-atf-preview {
+        width: 100%;
+        border: 1px dashed #ddd;
+        padding: 20px;
+        margin-top: 15px;
+    }
+}
+
+.woodmart-atf-btn-add,
+.woodmart-atf-btn-remove,
+.woodmart-multi-fonts-add {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:before {
+        font-family: dashicons;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        height: 16px;
+        margin-right: 5px;
+        line-height: 1;
+    }
+}
+
+.woodmart-atf-btn-remove {
+    position: absolute;
+    top: 270px;
+    right: 20px;
+    color: #ef521d;
+    padding: 3px 5px;
+
+    &:hover {
+        color: #d43803;
+    }
+
+    &:before {
+        content: "\f182";
+        vertical-align: top;
+    }
+}
+
+.woodmart-atf-btn-add,
+.woodmart-multi-fonts-add {
+    color: $woodmart-button-color;
+    cursor: pointer;
+    padding: 3px 0px;
+
+    &:hover,
+    &:focus {
+        color: $woodmart-button-color-hover;
+    }
+
+    &:before {
+        content: "\f502";
+        vertical-align: sub;
+    }
+}
+
+.woodmart-atf-selector,
+.woodmart-atf-custom-selector {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.woodmart-atf-font-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width:100%;
+    margin-bottom: 20px;
+}
+
+.woodmart-atf-family,
+.woodmart-atf-style-container,
+.woodmart-atf-subsets-container {
+    width: 33%;
+}
+
+.woodmart-atf-family {
+  margin-right: 20px;
+}
+
+.woodmart-atf-style-container {
+  margin-right: 20px;
+}
+
+.woodmart-atf-subsets-container {
+  margin-right: 0;
+}
+
+.woodmart-atf-color-container {
+  width: 100%;
+}
+
+.woodmart-atf-size-container {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.woodmart-atf-height-container {
+  margin-bottom: 20px;
+}
+
+/*======================================================
+=                 Slider styles                        =
+======================================================*/
+
+.post-type-woodmart_slide {
+ 
+    .term-parent-wrap,
+    .term-description-wrap {
+        display: none;
+    }
+
+    .description {
+        width: 95%;
+    }
+}
+
+.taxonomy-woodmart_slider {
+
+    .cmb2-wrap {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        width: 95%;
+    }
+
+    .cmb-th,
+    .cmb-td {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .cmb-th {
+
+        label {
+            color: #222;
+            font-weight: 600;
+        }
+    }
+
+    .cmb-td {
+
+        label {
+            display: inline;
+            vertical-align: middle;
+        }
+    }
+
+    .cmb-row {
+
+        &:not(:last-child) {
+            border-bottom: 1px dashed #e3e3e3;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.woodmart-images-opts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    
+    img {
+        display: block; 
+    }
+
+    span {
+        padding: 3px;
+        font-style: italic;
+        color: #767676;
+        font-size: 12px;
+    }
+
+    .woodmart-image-opt {
+        position: relative;
+        margin-right: 10px;
+        border: 2px solid #d9d9d9;
+        border-radius: $woodmart-vc-options-border;
+        padding: 3px;  
+        cursor: pointer;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+
+        .cmb2-id-vertical-align &,
+        .cmb2-id-horizontal-align & {
+
+            span {
+                display: none;
+            }
+        }
+
+        &.active {
+            border: 2px solid $woodmart-button-color;
+
+            &:before {
+                @extend %woodmart-image-checkmark;
+            }
+        }
+
+        &:not(.active) {
+
+            &:hover {
+                border: 2px solid #b9b9b9;
+            }
+        }
+    }
+}
+
+/*======================================================
+=                   Hotspot styles                     =
+======================================================*/
+  
+.wpb_woodmart_image_hotspot {
+
+    img {
+        max-width: 100px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .attach_image {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        max-width: 32px;
+    }
+
+    &,
+    .wpb_element_wrapper {
+        padding-bottom: 10px;
+    }
+}
+  
+.woodmart-image-hotspot-preview {
+    position: relative;
+    display: block;
+    border: 1px solid #ddd;
+    min-height: 200px;
+    width: 100%;
+}
+
+.woodmart-image-hotspot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
+    background-color: #2EAE62;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.woodmart-image-hotspot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.woodmart-hotspot-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.xtemos-loading .woodmart-image-hotspot,
+.woodmart-image-hotspot-image {
+    display: none;
+}
+
+/*======================================================
+=                       Sizeguide                      =
+======================================================*/
+
+#woodmart_sguide_metaboxes {
+    
+    input[type=text] {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        width: 100% !important;
+    }
+    .icon-button{
+        border-radius: 4px;
+        box-shadow: none;
+        width: 20px;
+        height: 20px;
+        font-size: 17px;
+    }
+    .icon-button.addcol,
+    .icon-button.addrow{
+        background-color: #0085ba;
+    }
+    
+    .icon-button.delcol,
+    .icon-button.delrow{
+        background-color: #77a8bc;
+    }
+}
+
+/*======================================================
+=                 360 view gallery shop                =
+======================================================*/
+
+#woocommerce-product-360-images .inside {
+    margin: 0;
+    padding: 0;
+
+    .add_product_360_images {
+        padding: 0 12px 12px;
+    }
+    #product_360_images_container {
+        padding: 0 0 0 9px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            &:after {
+                content: " ";
+                display: table;
+                clear: both;
+            }
+
+            &:before {
+                content: " ";
+                display: table;
+            }
+
+            li {
+
+                &.add {
+                    width: 80px;
+                    float: left;
+                    cursor: move;
+                    border: 1px solid #d5d5d5;
+                    margin: 9px 9px 0 0;
+                    background: #f7f7f7;
+                    border-radius: 2px;
+                    position: relative;
+                    box-sizing: border-box;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                }
+
+                &.image {
+                    width: 80px;
+                    float: left;
+                    cursor: move;
+                    border: 1px solid #d5d5d5;
+                    margin: 9px 9px 0 0;
+                    background: #f7f7f7;
+                    border-radius: 2px;
+                    position: relative;
+                    box-sizing: border-box;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                }
+
+                &.wc-metabox-sortable-placeholder {
+                    width: 80px;
+                    float: left;
+                    cursor: move;
+                    border: 1px solid #d5d5d5;
+                    margin: 9px 9px 0 0;
+                    background: #f7f7f7;
+                    border-radius: 2px;
+                    position: relative;
+                    box-sizing: border-box;
+                    border: 3px dashed #ddd;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+
+                    &:after {
+                        font-family: Dashicons;
+                        font-weight: 400;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
+                        text-align: center;
+                        content: "\f161";
+                        font-size: 2.618em;
+                        line-height: 72px;
+                        color: #ddd;
+                    }
+                }
+
+                &:hover ul.actions {
+                    display: block;
+                }
+            }
+
+            ul.actions {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                padding: 2px;
+                display: none;
+
+                li {
+                    float: right;
+                    margin: 0 0 0 2px;
+
+                    a {
+                        width: 1em;
+                        margin: 0;
+                        height: 0;
+                        display: block;
+                        overflow: hidden;
+
+                        &.tips {
+                            cursor: pointer;
+                        }
+
+                        &.delete {
+                            display: block;
+                            text-indent: -9999px;
+                            position: relative;
+                            height: 1em;
+                            width: 1em;
+                            font-size: 1.4em;
+
+                            &:before {
+                                font-family: Dashicons;
+                                speak: none;
+                                font-weight: 400;
+                                font-variant: normal;
+                                text-transform: none;
+                                line-height: 1;
+                                margin: 0;
+                                text-indent: 0;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                text-align: center;
+                                content: "\f153";
+                                color: #999;
+                                background: rgb(255, 255, 255);
+                                border-radius: 50%;
+                            }
+
+                            &:hover:before {
+                                color: #a00;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*======================================================
+=                     CMB2 STYLES                      =
+======================================================*/
+
+body .cmb-type-group,
+body .cmb2-postbox {
+
+    .cmb2-wrap {
+
+        > .cmb-field-list {
+
+            > .cmb-row {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .cmb-type-title {
+                margin-top: -13px;
+                margin-left: -12px;
+                margin-right: -12px;
+                padding-left: 27px;
+                padding-right: 27px; 
+
+                &:first-child {
+                    margin-top: -7px;
+                }
+            }
+        }
+    }
+
+    .cmb-type-woodmart-slider {
+        -ms-flex-preferred-size: 300px;
+        flex-basis: 300px;
+    }
+}
+
+.cmb-field-list {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    input[type="button"] {
+        height: 36px;
+        box-shadow: none;
+        border-radius: 4px;
+    }
+
+    select,
+    input[type="text"] {
+        @extend %woodmart-input-style;
+        height: 36px;
+    }
+
+    .wp-picker-container {
+        @extend %woodmart-colorpicker-style;
+    }
+    
+    .cmb-row {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+
+        &.cmb-type-woodmart-slider {
+
+            .cmb-th,
+            .cmb-td {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.cmb-type-woodmart-slider {
+
+    .cmb-th {
+        position: relative;
+        margin-bottom: 10px;
+
+        label {
+            padding-left: 25px;
+        }
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            color: #aaa;
+            font-family: dashicons;
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+
+    &.cmb2-id-content-width,
+    &.cmb2-id-height {
+        
+        .cmb-th {
+
+            &:before {
+                content: "\f472";
+            }
+        }
+    }
+
+    &.cmb2-id-content-width-tablet,
+    &.cmb2-id-height-tablet {
+
+        .cmb-th {
+
+            &:before {
+                content: "\f471";
+            }
+        }
+    }
+
+    &.cmb2-id-content-width-mobile,
+    &.cmb2-id-height-mobile {
+
+        .cmb-th {
+
+            &:before {
+                content: "\f470";
+            }
+        }
+    }
+}
+
+.cmb-type-title {
+    background-color: #f3f3f3;
+    color: #23282d;
+    text-transform: uppercase;
+    border-top: 1px solid #e9e9e9;
+    
+    .cmb2-metabox-title {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+    }
+}
+
+.woodmart-cmb2-button-set {
+
+    .cmb2-button-set-item {
+        display: inline-block;
+        height: 36px;
+        line-height: 36px;
+        padding: 0px 10px;
+        font-weight: 600;
+        background-color: #e3e3e3;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: #fff;
+            background-color: #b1b1b0;
+        }
+
+        &.active {
+            color: #fff;
+            background-color: $woodmart-button-alt-color;
+        }
+
+        &:not(:last-child) {
+            margin-right: 2px;
+        }
+
+        &:first-child {
+            border-top-left-radius: $woodmart-vc-options-border;
+            border-bottom-left-radius: $woodmart-vc-options-border;
+        }
+
+        &:last-child {
+            border-top-right-radius: $woodmart-vc-options-border;
+            border-bottom-right-radius: $woodmart-vc-options-border;
+        }
+    }
+}
+
+/*======================================================
+=                    VC STYLES                         =
+======================================================*/
+
+//**** WOODMART GRADIENT ****//
+
+.woodmart-grad-line {
+
+   .gradx {
+        border-width: 1px;
+        background: none;
+        border-radius: $woodmart-vc-options-border;
+   }
+
+   	.gradx_btn {
+   		@extend %woodmart-admin-btn;
+   		background-image: none;
+   		padding: 8px 15px;
+        border-color: #e6e6e6;
+        border-radius: $woodmart-vc-options-border;
+   	}
+
+   	.gradx_slider {
+
+   		&:after {
+   			border-width: 60px 1px 0px 0px;
+   		}
+   	}
+
+   	.cp-default {
+   		border-radius: 0 !important;
+   	}
+
+	.gradx_start_sliders {
+		margin-right: -6px;
+    	margin-left: -6px;
+	}
+
+   	.sp-container {
+   		border: none;
+   	}
+
+   	.sp-picker-container {
+		border-left: none;
+   	}
+
+   	.sp-picker-container {
+   		padding-top: 5px;
+   	}
+
+   	#gradx_slider_controls {
+   		padding-top: 5px;
+   		margin-left: 10px;
+   	}
+
+    .gradx_slectboxes {
+        display: flexbox;
+        display: flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        flex-direction: row;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        -webkit-justify-content: flex-start;
+        -ms-justify-content: flex-start;
+        justify-content: flex-start;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        select {
+            -webkit-flex-basis: 100%;
+            -ms-flex-basis: 100%;
+            flex-basis: 100%;
+            max-width: 100%;
+            width: 100%;
+            margin-right: 5px;
+            margin-left: 5px;
+            padding: 2px;
+            line-height: 28px;
+            height: 28px;
+        }
+    }
+}
+
+.woodmart-grad-preview {
+    display: none;
+}
+
+//**** WOODMART DATE PICKER ****//
+
+div.ui-datepicker {
+    margin-top: 12px;
+
+    .ui-datepicker-header {
+        background-image: none;
+        background-color: #f3f3f3;
+        border-radius: 0;
+        border: none;
+
+        .ui-corner-all {
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .ui-state-hover {
+            background-image: none;
+            border: none;
+        }
+
+        .ui-icon {
+            background-image: none;
+        }
+
+        .ui-datepicker-prev-hover, 
+        .ui-datepicker-next-hover {
+            top: 2px;
+        }
+
+        .ui-datepicker-prev-hover {
+            left: 2px;
+        }
+
+        .ui-datepicker-next-hover {
+            right: 2px;
+        }
+
+        .ui-datepicker-next,
+        .ui-datepicker-prev {
+
+            &:before {
+                font-family: dashicons;
+                display: block;
+                width: 20px;
+                height: 20px;
+                font-size: 16px;
+                left: 5px;
+                top: 5px;
+                position: absolute;
+                font-weight: 400;
+            }
+        }
+
+        .ui-datepicker-next {
+
+            &:before {
+                content: "\f345";
+            }
+        }
+
+        .ui-datepicker-prev {
+
+            &:before {
+                content: "\f341";
+            }
+        }
+    }
+
+    .ui-state-default {
+        background-image: none;
+        background-color: #f3f3f3;
+        border: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+            color: black;
+            background-color: #e0e0e0;
+        }
+    }
+
+    .ui-state-highlight {
+        color: white;
+        background-color: $woodmart-button-color;
+    }
+}
+
+//**** WOODMART IMAGE SELECT ****//
+
+.woodmart-vc-image-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    li {
+        position: relative;
+        -ms-flex-preferred-size: 140px;
+        flex-basis: 140px;
+        border: 2px solid;
+        border-color: #d9d9d9;
+        padding: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: $woodmart-vc-options-border;
+        transition: all 0.2s ease-in-out;
+
+        &.selected {
+            border-color: $woodmart-button-color;
+
+            &:before {
+                @extend %woodmart-image-checkmark;
+            }
+        }
+
+        &.with-title {
+
+            img {
+                margin-bottom: 5px;
+            }
+        }
+
+        &:not(.selected) {
+
+            &:hover {
+                border-color: #b9b9b9;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #333333;
+    }
+
+    .social-form &,
+    .title-align & {
+      
+        li {
+            -ms-flex-preferred-size: 40px;
+            flex-basis: 40px;
+        }
+    }
+
+    .price-plan &,
+    .divider &,
+    .social-style &,
+    .content-position &,
+    .info-icon &,
+    .button-style &,
+    .button-shape &,
+    div[data-vc-shortcode="woodmart_image_hotspot"] & {
+
+        li {
+            -ms-flex-preferred-size: 80px;
+            flex-basis: 80px;
+        }
+    }
+    
+    .tab-design & {
+
+        li {
+            -ms-flex-preferred-size: 180px;
+            flex-basis: 180px;
+        }
+    }
+
+    div[data-vc-shortcode="woodmart_portfolio"] & {
+		
+		[data-value="inherit"] {
+			
+			img {
+				-o-object-position: 50% 35%;
+    			object-position: 50% 35%;
+    			-o-object-fit: cover;
+    			object-fit: cover;
+    			height: 140px;
+    			width: 140px;
+			}
+		}
+    }
+}
+
+//**** WOODMART AUTOCOMPLETE DROPDOWN ****//
+
+ul.ui-autocomplete {
+    font-size: 13px;
+    color: #444;
+    background-color: #fff;
+
+    &.ui-widget {
+        border: 1px solid #5b9dd9;
+    }
+}
+
+//**** WOODMART SLIDER VALUE SELECTOR ****//
+
+.woodmart-slider-field-value-display {
+    font-weight: 400;
+    font-size: 12px;
+    color: #888;
+    padding-top: .5em;
+    color: #5e5e5e;
+}
+  
+.woodmart-slider-field {
+  
+    .ui-widget-header {
+        background: $woodmart-button-color;
+    }
+  
+    &.ui-widget {
+  
+        &.ui-widget-content {
+            border: none;
+            background-color: #f1f1f1;
+        }
+    }
+  
+    &.ui-slider {
+  
+        .ui-slider-handle {
+            background: white;
+            border: solid 2px $woodmart-button-color;
+            border-radius: 50%;
+            top: -5px;
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 0 2px #89bce8;
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 3px #89bce8;
+            }
+        } 
+    }
+  
+    &.ui-slider-horizontal {
+        height: 4px;
+        cursor: pointer;
+    }
+}
+
+//**** WOODMART SHORTCODE STYLES ****//
+
+.wpb_edit_form_elements {
+
+    input, 
+    select, 
+    textarea {
+        @extend %woodmart-input-style;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .vc_column{
+        -webkit-animation: wd-fadeInTooltip 0.5s ease;
+        animation: wd-fadeInTooltip 0.5s ease;
+
+        &.vc_col-sm-6 {
+            padding-top: 15px !important; // woodmart extras tab
+        }
+    }
+
+    .vc_autocomplete-field {
+
+        .vc_autocomplete {
+            border-radius: $woodmart-vc-options-border;
+            padding-left: 6px;
+            padding-right: 6px;
+
+            &:hover {
+                border-color: #bdbdbd;
+            }
+        }
+    }
+
+    .ui-autocomplete-input {
+        box-shadow: none;
+    }
+}
+
+.wpb_el_type_woodmart_empty_space {
+    padding: 0 !important;
+}
+
+.wpb_el_type_woodmart_css_id {
+    display: none;
+
+    & + .vc_col-xs-12 {
+        padding-top: 0 !important;
+    }
+}
+
+[data-vc-shortcode="woodmart_responsive_text_block"] {
+
+    [data-tab-index="2"] {
+        display: none;
+    }
+}
+
+[data-vc-shortcode="woodmart_info_box"] {
+
+    [data-vc-shortcode-param-name="woodmart_bg_position"] {
+        margin-left: 350px;
+        margin-bottom: 15px;
+    }
+
+    .wpb_element_label {
+        font-weight: 400;
+    }
+}
+
+//**** OPTION SECTION STYLE ****//
+
+.woodmart-td-wrapper {
+    margin-bottom: 30px;
+    width: 100%;
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+.woodmart-td-title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $woodmart-vc-element-title;
+}
+
+.woodmart-td-content {
+    display: flex;
+    flex-wrap: wrap;
+    background: #F9F9F9;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0;
+    clear: both;
+    border: 1px solid #e8e8e8;
+
+    .vc_column {
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        select {
+            padding: 6px 6px;
+            height: 36px;
+        }
+
+        &.wpb_el_type_woodmart_image_select {
+            padding-bottom: 5px;
+        }
+    }
+
+    .wpb_element_label {
+        margin-bottom: 10px;
+    }
+
+    .wpb_el_type_vc_link {
+
+        .button {
+            height: 36px;
+            line-height: 34px;
+            border-radius: $woodmart-vc-options-border;
+            box-shadow: none;
+        }
+
+        .vc_link_label {
+            line-height: 36px;
+        }
+    }
+
+    .wpb_el_type_attach_image {
+
+        .added,
+        .gallery_widget_add_images {
+            border-radius: $woodmart-vc-options-border;
+        }
+    }
+    
+    .wp-media-buttons {
+        
+        button {
+            border-radius: $woodmart-vc-options-border;
+            box-shadow: none;
+        }
+    }
+
+    .woodmart-vc-slider {
+        position: relative;
+    }
+
+    .woodmart-slider-field {
+        margin-top: 25px;
+    }
+
+    .woodmart-slider-field-value-display {
+        position: absolute;
+        right: 0;
+        bottom: 27px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.wpb-select,
+select[name$="[font-weight]"] {
+
+    &[class$="100"],
+    option[value="100"] {
+        font-weight: 100;
+    }
+
+    &[class$="200"],
+    option[value="200"] {
+        font-weight: 200;
+    }
+
+    &[class$="300"],
+    option[value="300"] {
+        font-weight: 300;
+    }
+
+    &[class$="400"],
+    option[value="400"] {
+        font-weight: 400;
+    }
+
+    &[class$="500"],
+    option[value="500"] {
+        font-weight: 500;
+    }
+
+    &[class$="600"],
+    option[value="600"] {
+        font-weight: 600;
+    }
+
+    &[class$="700"],
+    option[value="700"] {
+        font-weight: 700;
+    }
+
+    &[class$="800"],
+    option[value="800"] {
+        font-weight: 800;
+    }
+    
+    &[class$="900"],
+    option[value="900"] {
+        font-weight: 900;
+    }
+}
+
+//**** WOODMART COLORPICKER ****//
+
+.woodmart-vc-colorpicker {
+
+    .wp-picker-container {
+        position: relative;
+        @extend %woodmart-colorpicker-style;
+
+        .wp-color-result {
+    
+            &.wp-picker-open {
+    
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .woodmart-vc-colorpicker-input[type=text] {
+            height: 36px;
+            padding: 8px 6px;
+        }
+
+        .iris-picker {
+            margin-bottom: 74px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    .wp-picker-holder {
+        position: absolute;
+        left: 0;
+        top: 100%;
+    }
+}
+
+.woodmart-opacity-container {
+    position: absolute;
+    border-radius: 0;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    padding: 6px;
+    width: 243px;
+    left: -1px;
+    z-index: 1000;
+    bottom: -73px;
+    border-bottom-left-radius: $woodmart-vc-options-border;
+    border-bottom-right-radius: $woodmart-vc-options-border;
+
+    .woodmart-opacity-field {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+//**** WOODMART BUTTON SET ****//
+
+.woodmart-vc-button-set-list {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    li {
+        display: inline-block;
+        background-color: #e3e3e3;
+        padding: 0px 10px;
+        margin-bottom: 0;
+        color: #444;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        font-weight: 600;
+
+        span {
+            display: block;
+            line-height: 36px;
+        }
+
+        &:hover {
+            background-color: #7a7a7a;
+            color: #fff;
+        }
+
+        &.checked {
+            background-color: $woodmart-button-alt-color;
+            color: #fff;
+        }
+
+        &:not(:last-child) {
+            margin-right: 2px;
+        }
+
+        &:first-child {
+            border-top-left-radius: $woodmart-vc-options-border;
+            border-bottom-left-radius: $woodmart-vc-options-border;
+        }
+
+        &:last-child {
+            border-top-right-radius: $woodmart-vc-options-border;
+            border-bottom-right-radius: $woodmart-vc-options-border;
+        }
+    }
+}
+
+//**** WOODMART BUTTON SWITCH ****//
+
+.woodmart-vc-switch {
+
+    .switch-controls {
+        display: inline-block;
+        min-width: 50px;
+        height: 36px;
+        background-color: #e3e3e3;
+        text-align: center;
+        cursor: pointer;
+        color: #444;
+        transition: all 0.2s ease-in-out;
+        font-weight: 600;
+    
+        span {
+            display: block;
+            line-height: 36px;
+        }
+    
+        &:hover {
+            background-color: #7a7a7a;
+            color: #fff;
+        }
+
+        &:first-child {
+            border-top-left-radius: $woodmart-vc-options-border;
+            border-bottom-left-radius: $woodmart-vc-options-border;
+            margin-right: 2px;
+        }
+
+        &:last-child {
+            border-top-right-radius: $woodmart-vc-options-border;
+            border-bottom-right-radius: $woodmart-vc-options-border;
+        }
+    }
+    
+    .switch-inactive {
+    
+        &.checked {
+            background-color: #b1b1b0;
+            color: #ffff;
+        }
+    }
+    
+    .switch-active {
+    
+        &.checked {
+            background: $woodmart-button-alt-color;
+            color: #ffff;
+        }
+    }
+}
+
+//**** RESPONSIVE FONT SIZE ****//
+
+.wpb_el_type_woodmart_responsive_size {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: auto !important; //overwright theme styles
+}
+
+.woodmart-rs-wrapper {
+
+    > div {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .woodmart-rs-input {
+        width: 60px;
+        vertical-align: middle;
+        height: 36px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .woodmart-rs-item {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+    
+        &.hide {
+            display: none;
+        }
+    }
+
+    .woodmart-rs-unit {
+        margin-right: 0;
+    }
+}
+
+.woodmart-rs-icon {
+    display: inline-block;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-top-left-radius: $woodmart-vc-options-border;
+    border-bottom-left-radius: $woodmart-vc-options-border;
+}
+
+.woodmart-rs-trigger {
+    cursor: pointer;
+}
+
+//**** SHORTCODE OPTIONS HINT ****//
+
+.woodmart-hint {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 17px;
+    margin-left: 10px;
+    font-size: 12px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 1px solid #0473aa;
+    color: #0473aa;
+
+    &:hover {
+        
+        .woodmart-hint-content {
+            -webkit-animation: wd-fadeInTooltip 0.3s ease;
+            animation: wd-fadeInTooltip 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.woodmart-hint-content {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin-top: -23px;
+    width: 250px;
+    background-color: #000;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+
+    .woodmart-hint-left & {
+        left: 100%;
+        margin-left: 6px;
+
+        &:before {
+            left: -3px;
+        }
+
+        &:after {
+            left: -25px;
+        }
+    }
+
+    .woodmart-hint-right & {
+        right: 100%;
+        margin-right: 6px;
+
+        &:before {
+            right: -3px;
+        }
+
+        &:after {
+            right: -25px;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 19px;
+        display: block;
+        background-color: #000;
+        width: 10px;
+        height: 10px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 100%;
+        top: 0;
+    }
+}
+
+//**** SHORTCODE OPTIONS TOOLTIPS ****//
+
+.woodmart-css-tooltip {
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+.woodmart-tltp {
+    position: relative;
+
+    &:hover {
+
+        .woodmart-tooltip-label {
+            -webkit-animation: wd-fadeInTooltip 0.3s ease;
+            animation: wd-fadeInTooltip 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.woodmart-tooltip-label {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    padding: 0px 15px;
+    line-height: 34px;
+    height: 34px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: .3px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #000;
+    z-index: 2;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    margin-bottom: 8px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 5px 0;
+        border-color: transparent;
+        border-top-color: #000;
+    }
+}
+
+//**** WOODMART ANIMATIONS SELECTOR ****//
+
+.vc_param-animation-style-preview {
+
+    .vc_btn {
+        height: 36px;
+    }
+}
+
+.wd-slide-from-bottom,
+.wd-slide-from-top,
+.wd-slide-from-left,
+.wd-slide-from-right,
+.wd-left-flip-y,
+.wd-right-flip-y,
+.wd-top-flip-x,
+.wd-bottom-flip-x,
+.wd-zoom-in,
+.wd-rotate-z {
+    -webkit-transition: opacity 0.7s cubic-bezier(0, 0.87, 0.58, 1);
+    transition: opacity 0.7s cubic-bezier(0, 0.87, 0.58, 1);
+
+    &.animated {
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+        -webkit-animation-timing-function: cubic-bezier(0, 0.87, 0.58, 1);
+        animation-timing-function: cubic-bezier(0, 0.87, 0.58, 1); 
+    }
+}
+
+.wd-slide-from-top {
+    -webkit-animation-name: wd-SlideFromTop;
+    animation-name: wd-SlideFromTop;
+}
+
+.wd-slide-from-bottom {
+    -webkit-animation-name: wd-SlideFromBottom;
+    animation-name: wd-SlideFromBottom;
+}
+
+.wd-slide-from-left {
+    -webkit-animation-name: wd-SlideFromLeft;
+    animation-name: wd-SlideFromLeft;
+}
+
+.wd-slide-from-right {
+    -webkit-animation-name: wd-SlideFromRight;
+    animation-name: wd-SlideFromRight;
+}
+
+.wd-right-flip-y {
+    -webkit-animation-name: wd-RightFlipY;
+    animation-name: wd-RightFlipY;
+}
+
+.wd-left-flip-y {
+    -webkit-animation-name: wd-LeftFlipY;
+    animation-name: wd-LeftFlipY;
+}
+
+.wd-top-flip-x {
+    -webkit-animation-name: wd-TopFlipX;
+    animation-name: wd-TopFlipX;
+}
+
+.wd-bottom-flip-x {
+    -webkit-animation-name: wd-BottomFlipX;
+    animation-name: wd-BottomFlipX;
+}
+
+.wd-zoom-in {
+    -webkit-animation-name: wd-ZoomIn;
+    animation-name: wd-ZoomIn;
+}
+
+.wd-rotate-z {
+    -webkit-animation-name: wd-RotateZ;
+    animation-name: wd-RotateZ;
+    will-change: animation;
+}
+
+/*======================================================
+=                   Templates library                  =
+======================================================*/
+  
+.vc_ui-list-bar {
+
+    &.woodmart-templates-list {
+        padding: 8px;
+    }
+}
+
+.woodmart-templates-heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 1px solid #ddd;
+
+    > div {
+        padding: 0;
+    }
+
+    h3 {
+        margin-top: 0px;
+        font-size: 28px;
+    }
+
+    input[type="text"] {
+        @extend %woodmart-input-style;
+    }
+    
+    .vc_col-sm-3 {
+
+        &:before {
+            content: "\e8b6";
+            font-family: "vcpb-plugin-icons";
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            left: 7px;
+            color: #bfc2c8;
+        }
+    }
+
+    .vc_col-sm-9 {
+        padding-right: 15px;
+    }
+
+    .vc_description {
+        margin-bottom: 8px;
+    }
+}
+
+.woodmart-templates-search {
+    margin-bottom: 8px;
+    padding-left: 35px !important;
+}
+
+.woodmart-templates-list {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 8px;
+    min-height: 200px;
+}
+
+.woodmart-template-item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -ms-flex-preferred-size: 240px;
+    flex-basis: 240px;
+    border-radius: 4px;
+    margin: 0 10px 20px;
+    -webkit-transition: .2s all ease;
+    transition: .2s all ease;
+    text-align: center;
+    max-width: 305px;
+
+    h3 {
+        color: #3f3f3f;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    &.woodmart-template-loading {
+        opacity: 0.5;
+
+        a {
+            pointer-events: none;
+        }
+    }
+
+    &.show-by-search,
+    &.show-by-tag {
+        display: block !important;
+    }
+
+    &.hide-by-tag,
+    &.hide-by-search {
+        display: none !important;
+    }
+
+    &:hover {
+        
+        .woodmart-template-image {
+            box-shadow: 1px 2px 7px #e1e1e1;
+
+            > a {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &:before {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .woodmart-template-actions {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .element-adding & {
+
+        .woodmart-template-image {
+            
+            &:before,
+            > a {
+                display: none;
+            }
+        }
+    }
+}
+
+.woodmart-template-actions {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index:2;
+    font-size:0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .2s all ease;
+    transition: .2s all ease;
+
+    > a {
+        cursor: pointer;
+        padding: 3px;
+        margin: 3px;
+        display: inline-block;
+        height: 36px;
+        width: 36px;
+        color: #313131;
+        border: none;
+        -webkit-transition: .2s all ease;
+        transition: .2s all ease;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+        box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+
+        &:hover {
+            background: $woodmart-button-color;
+            color: #FFF;
+        }
+        
+        &:before {
+            display: inline-block;
+            line-height: 36px;
+            font-family: "vcpb-plugin-icons";
+        }
+    }
+}
+
+.woodmart-template-preview {
+
+    &:before {
+        content: "\e8b6";
+        font-size: 24px;
+    }
+}
+
+.woodmart-template-add {
+
+    &:before {
+        content: "\e90d";
+        font-size: 16px;
+    }
+}
+
+.woodmart-template-image {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px #e1e1e1;
+    margin-bottom: 10px;
+    background: white;
+    min-height: 220px;
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+    }
+
+    &:before {
+        content: "";
+        background: rgba(255,255,255,0.7);
+        position: absolute;
+        top: 0;
+        bottom:0;
+        z-index:2;
+        width:100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s  ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+    }
+}
+
+.woodmart-templates-tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 100%;
+    flex: 1 0 100%;
+
+    ul {
+        margin: 0 2px 25px;
+
+        li {
+            display: inline-block;
+            margin: 0 2px;
+
+            a {
+                display: inline-block;
+                padding: 3px 7px;
+                font-size: 12px;
+                color: #333;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            &:hover {
+                
+                a {
+                    color: #000;
+                }
+
+                .tab-preview-name {
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .tab-preview-name {
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 1px;
+            transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
+            -webkit-transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
+            background-color: #0473aa;
+        }
+    }
+
+    .tab-preview-count {
+        vertical-align: super;
+        color: #0473aa;
+    }
+
+    .active-tag {
+
+        a {
+            color: #000;
+        }
+
+        .tab-preview-name {
+
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*======================================================
+=                 Theme settings search                =
+======================================================*/
+
+.xtemos-settings-search {
+    float:left;
+    margin: 17px;
+    position: relative;
+
+    input[type="text"] {
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        color: rgba(255,255,255,0.7);
+        font-size: 18px;
+        width: 300px;
+        padding-left: 0;
+
+        &:focus {
+            outline: none;
+            @include box-shadow(rgba(0,0,0,0) 0 0 0);
+            border-bottom: 2px solid rgba(255,255,255,0.6);
+        }
+    }
+
+    &:after {
+        content: "\f179";
+        display: inline-block;
+        font-size: 24px;
+        line-height: 1;
+        font-family: dashicons;
+        text-decoration: inherit;
+        font-weight: 400;
+        font-style: normal;
+        vertical-align: top;
+        position: absolute;
+        right: 1px;
+        top: 5px;
+    }
+}
+
+.redux_field_th {
+    @include transition(padding-left, ease-in-out, 0.3s);
+    border-left: 0 solid #ae3535;
+    padding-left: 0;
+}
+
+.highlight-field {
+    border-left: 3px solid #ae3535;
+    padding-left: 15px!important;
+}
+
+body ul.xtemos-settings-result {
+    @include box-shadow(0 1px 10px rgba(173, 173, 173, 0.8));
+    border:none !important;
+
+    li {
+        padding: 5px 10px;
+        line-height: 1.4;
+        border-bottom: 1px solid rgba(173, 173, 173, 0.4);
+
+        &.ui-state-focus {
+            border: none;
+            border-bottom: 1px solid rgba(173, 173, 173, 0.4);
+
+            .el {
+                color: #909090;
+            }
+        }
+
+        .el {
+            float: left;
+            display: block;
+            width: 30px;
+            height: 30px;
+            font-size: 21px;
+            line-height: 43px;
+            color: #e3e3e3;
+        }
+    }
+
+    .setting-title {
+        font-size: 15px;
+    }
+
+    .settting-path {
+        font-size: 13px;
+    }
+}
+
+/*======================================================
+=                  VARITATION GALLERY                  =
+======================================================*/
+
+.woodmart-variation-gallery-images  {
+
+    li {
+
+        &.image,
+        &.wc-metabox-sortable-placeholder {
+            position: relative;
+            width: 80px;
+            float: left;
+            cursor: move;
+            border: 1px solid #d5d5d5;
+            margin: 0 9px 9px 0;
+            background: #f7f7f7;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        &.image {
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            &:hover {
+
+                .delete {
+                    display: block;
+                }
+            }
+        }
+
+        &.wc-metabox-sortable-placeholder {
+            border: 3px dashed #ddd;
+            overflow: hidden;
+
+            &:after {
+                font-family: Dashicons;
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                text-align: center;
+                content: "\f161";
+                font-size: 2.618em;
+                line-height: 72px;
+                color: #ddd;
+            }
+        }
+
+        .delete {
+            position: absolute;
+            display: none;
+            right: -8px;
+            top: -8px;
+            padding: 1px;
+            text-decoration: none;
+
+            span {
+
+                &:before {
+                    content: "\f153";
+                    font-size: 17px;
+                    color: #999;
+                    background-color: #fff;
+                    border-radius: 50%;
+                }
+            }
+
+            &:hover {
+
+                span {
+
+                    &:before {
+                        color: #a00;
+                    }
+                }
+            }
+        }
+    }
+
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+/** ------------------------------------------------------------------------------------------------
+* MAX-WIDTH: 1350px
+* ------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 1350px) {
+
+    #woodmart_options-products_hover,
+	#woodmart_options-categories_design,
+	#woodmart_options-portoflio_style,
+    #woodmart_options-product_design,
+    #woodmart_options-page-title-design,
+    #woodmart_options-add_to_cart_action,
+    #woodmart_options-thums_position,
+    #woodmart_options-single_product_style,
+    #woodmart_options-quick_view_layout {
+    
+        .redux-image-select {
+    
+            > li {
+                width: 25%;
+                max-width: 25%;
+                -ms-flex-preferred-size: 25%;
+                flex-basis: 25%;
+            }
+        }
+    }
+}
+
+/** ------------------------------------------------------------------------------------------------
+* MAX-WIDTH: 1024px
+* ------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+
+    .redux-container {
+
+        .redux-main {
+
+            .redux-container-typography {
+        
+                // .select2-container {
+                //     min-width: auto !important;
+                // }
+        
+                .redux-typography-container {
+        
+                    div.select_wrapper {
+                        -ms-flex-preferred-size: 100%;
+                        flex-basis: 100%;
+                        max-width: 100% !important;
+                        width: 100% !important;
+                        padding-right: 0 !important;
+        
+                        &.typography-align {
+                            margin-right: 0 !important;
+                        }
+                    }
+        
+                   .input_wrapper {
+                        margin-left: 0px;
+        
+                        input.mini {
+                            border-radius: 0;
+                        }
+                   }
+                }
+            }   
+        }
+    }
+
+    #woodmart_options-products_hover,
+	#woodmart_options-categories_design,
+	#woodmart_options-portoflio_style,
+    #woodmart_options-product_design,
+    #woodmart_options-page-title-design,
+    #woodmart_options-add_to_cart_action,
+    #woodmart_options-thums_position,
+    #woodmart_options-single_product_style,
+    #woodmart_options-quick_view_layout,
+    #woodmart_options-footer-layout {
+    
+        .redux-image-select {
+    
+            > li {
+                width: 33.333333%;
+                max-width: 33.333333%;
+                -ms-flex-preferred-size: 33.333333%;
+                flex-basis: 33.333333%;
+            }
+        }
+    }
+
+    .miltifont-field {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .woodmart-row {
+    
+        &.woodmart-two-columns,
+        &.woodmart-three-columns,
+        &.woodmart-four-columns {
+            .woodmart-column {
+                @include flex(1 0 100%);
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }  
+}
+
+/** ------------------------------------------------------------------------------------------------
+* MAX-WIDTH: 600px
+* ------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+
+    .redux-container {
+    
+         .redux-sidebar {
+            width: 44px;
+
+            .redux-group-tab-link-a {
+
+                span {
+                    padding: 16px;
+                    font-weight: normal;
+                }
+            }
+
+            .subsection {
+
+                span {
+                    padding: 5px;
+                }  
+            }
+        }
+
+        .redux-main {
+            margin-left: 44px
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .post-type-woodmart_slide {
+    
+        .description {
+            max-width: 100%;
+        }
+    }
+
+    .taxonomy-woodmart_slider {
+
+        .cmb2-wrap {
+            width: 100%;
+        }
+    }
+    
+    body .cmb-type-group,
+    body .cmb2-postbox {
+    
+        .cmb2-wrap {
+    
+            > .cmb-field-list {
+    
+                > .cmb-row {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+/** ------------------------------------------------------------------------------------------------
+* RTL
+* ------------------------------------------------------------------------------------------------ */
+
+.rtl {
+
+    %woodmart-image-checkmark {
+        right: auto;
+        left: -6px;
+    }
+
+    %woodmart-colorpicker-style {
+
+        .wp-color-result {
+            margin-right: 0 !important;
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 34px;
+        }
+    
+        .wp-color-result-text {
+            border-right-color: #ddd;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    
+        .wp-color-picker {
+            margin-left: 0 !important;
+            margin-right: 6px !important;
+        }
+    }
+
+    .highlight-field {
+        border-left: 0;
+        border-right: 3px solid #ae3535;
+        padding-right: 15px !important;
+        padding-left: 10px !important;
+    }
+
+    .about-wrap {
+    
+        h1 {
+            margin: .2em 0 0 215px;
+        }
+    
+        .about-text {
+            margin: 1em 0 1em 215px;
+        }
+    }
+
+    .agree-text{
+        margin-left: 0;
+        margin-right: 24px;
+    }
+
+    .woodmart-theme-badge {
+        right: auto;
+        left: 0;
+    }
+
+    .xtemos-settings-search {
+        float: right; 
+
+        &:after {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    li[id="4_section_group_li"] {
+
+        .el-photo {
+            left: auto;
+            right: -2px;
+        }
+    }
+
+    .redux-container-slider,
+    .redux-container-switch {
+        direction: rtl !important;
+        float: none;
+    }
+
+    .redux-container-link_color {
+
+        .linkColor {
+            padding-right: 0;
+            padding-left: 10px;
+        }
+    }
+
+    //**** WOODMART SETTINGS SWITCH ****//
+
+    .switch-options {
+        display: inline-block;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    //**** WOODMART SETTINGS BUTTON SET ****//
+
+    .buttonset {
+        margin-right: 0;
+        margin-left: 10px;
+
+        > label,
+        .ui-button {
+
+            &:not(:last-child) {
+                margin-right: 0 !important;
+                margin-left: 2px !important;
+            }
+
+            &:nth-child(2) {
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+    
+            &:last-child {
+                border-top-left-radius: $woodmart-vc-options-border;
+                border-bottom-left-radius: $woodmart-vc-options-border;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }    
+
+    // SELECT2 GLOBAL OPTIONS
+
+    &.toplevel_page__options {
+
+        .select2-container {
+
+            .select2-choice {
+
+                abbr {
+                    right: auto;
+                    left: 40px !important;
+                }
+
+                .select2-arrow {
+                    border-left: none;
+                    border-right: 1px solid #e2e2e2;
+                }
+            }
+
+            &.select2-allowclear {
+
+                .select2-choice {
+
+                    .select2-chosen {
+                        margin-right: 0;
+                        margin-left: 56px;
+                    }
+                }
+            }
+        }
+
+        .select2-search {
+
+            input {
+                padding: 8px 5px 8px 20px;
+            }
+
+            &:before {
+                right: auto;
+                left: 6px;
+            }
+        }
+
+        .select2-results {
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+
+            .select2-result-label {
+                padding: 7px 15px 7px 9px;
+            }
+        }
+        
+        .select2-container-multi {
+
+            .select2-choices {
+
+                .select2-search-choice {
+                    padding: 6px 18px 6px 10px;
+                    margin: 6px 6px 0 0 !important;
+                }
+            }
+        }
+    }
+
+    .redux-container {
+
+        #redux-header {
+
+            .display_header {
+            	margin: 20px 70px 20px 20px;
+                float: right;
+
+                h2 {
+                    padding-left: 15px;
+                    padding-right: 0;
+                }
+
+                .redux-dev-mode-notice-container {
+                    right: auto;
+                    left: 26px;
+                }
+
+                &:before {
+                    left: auto;
+                    right: 18px;
+                }
+            }
+        }
+
+        .redux-container-slider {
+
+            .redux-slider-container {
+                margin-left: 0;
+                margin-right: 30px;
+                direction: ltr;
+            }
+        }
+
+        .redux-main {
+            margin-left: 0;
+            margin-right: 232px;
+
+            .redux-field-container {
+
+                .upload {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+
+                .select2-container:not(.redux-typography):not(.select2-container-multi) {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+
+            .input-append {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+
+            .redux-typography-container {
+
+                div.select_wrapper {
+                    padding-left: 10px !important;
+                    padding-right: 0 !important;
+
+                    &.typography-align {
+                        margin-right: 0 !important;
+                        margin-left: 50% !important;
+                    }
+                }
+                
+                label {
+                    text-align: right;
+                }
+    
+                .wp-picker-container {
+                    float: right;
+                }
+
+                .input_wrapper {
+                    margin-right: 0px;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        input.color-transparency {
+            margin-right: 10px;
+            margin-left: 3px;
+        }
+
+        #redux-footer {
+            right: auto !important;
+            left: 21px;
+
+            .button:not(.button-primary) {
+                margin-left: 0;
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .redux-action_bar {
+
+        .spinner {
+            float: right;
+        }
+    }
+
+    .redux-sidebar {
+
+        .redux-group-menu {
+
+            li {
+
+                &.active {
+
+                    &.hasSubSections {
+
+                        a {
+
+                            &:after {
+                                right: auto;
+                                left: 0;
+                                transform: rotate(180deg);
+                                -webkit-transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .woodmart-multi-fonts-remove {
+        float: left;
+    }
+
+    .woodmart-miltifont-repeater {
+        
+        .icon {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+    }
+
+    // ADVANCED TYPOGRAPHY STYLES
+
+    .woodmart-atf-color-container {
+
+        .woodmart-atf-color-point {
+            margin-right: 0;
+            margin-left: 20px;
+        }
+    }
+
+    .woodmart-atf-responsive-opener {
+        margin-right: 0;
+        margin-left: 6px;
+
+        &:before {
+            content: "\f341";
+        }
+    }
+
+    .woodmart-atf-size-point label:before,
+    .woodmart-atf-height-point label:before {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    /* Typography sections */
+
+    .woodmart-atf-btn-add,
+    .woodmart-atf-btn-remove,
+    .woodmart-multi-fonts-add {
+
+        &:before {
+            margin-left: 5px;
+            margin-right: 0;
+        }
+    }
+
+    .woodmart-atf-btn-remove {
+        right: auto;
+        left: 20px;
+    }
+
+    .woodmart-atf-family,
+    .woodmart-atf-size-container,
+    .woodmart-atf-style-container {
+      margin-right: 0;
+      margin-left: 20px !important;
+    }
+
+    .cmb-type-woodmart-slider {
+
+        .cmb-th {
+    
+            label {
+                padding-left: 0;
+                padding-right: 25px;
+            }
+    
+            &:before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .woodmart-cmb2-button-set {
+
+        .cmb2-button-set-item {
+    
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-left: 2px;
+            }
+
+            &:first-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+            }
+    
+            &:last-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: $woodmart-vc-options-border;
+                border-bottom-left-radius: $woodmart-vc-options-border;
+            }
+        }
+    }
+
+    // CSS GENERATOR FORM
+
+    .css-checkbox-children {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    //**** XTEMOS LOADER ****//
+
+    .xtemos-loader {
+        left: auto;
+        right: 50%;
+        -webkit-transform: translate(50%, 50%);
+        transform: translate(50%, 50%);
+    }
+
+    //**** TEMPLATE LIBRARY LOADER WRAPPER ****//
+    
+    .xtemos-loader-wrapper {
+    
+        .xtemos-loader {
+            -webkit-transform: translate(50%, 20px);
+            transform: translate(50%, 20px);
+        }
+    
+        > p {
+            -webkit-transform: translate(50%, 100px);
+            transform: translate(50%, 100px);
+            left: auto;
+            right: 50%;
+        }
+    }
+
+    //**** TEMPLATE LIBRARY ****//
+
+    .woodmart-templates-heading {
+
+        .vc_col-sm-3 {
+
+            &:before {
+                left: auto;
+                right: 7px;
+            }
+        }
+
+        .vc_col-sm-9 {
+            padding-right: 0;
+            padding-left: 15px;
+        }
+    }
+
+    .woodmart-templates-search {
+        padding-left: 6px !important;
+        padding-right: 35px !important;
+    }
+
+    .woodmart-templates-tags {
+
+        .tab-preview-name {
+
+            &:after {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    
+    //**** VC STYLES ****//
+
+    //**** WOODMART DATE PICKER ****//
+
+    div.ui-datepicker {
+
+        .ui-datepicker-header {
+
+            .ui-datepicker-prev-hover {
+                left: auto;
+                right: 2px;
+            }
+
+            .ui-datepicker-next-hover {
+                right: auto;
+                left: 2px;
+            }
+
+            .ui-datepicker-next {
+
+                &:before {
+                    content: "\f341";
+                }
+            }
+    
+            .ui-datepicker-prev {
+    
+                &:before {
+                    content: "\f345";
+                }
+            }
+
+            .ui-datepicker-next,
+            .ui-datepicker-prev {
+
+                &:before {
+                    left: auto;
+                    right: 5px;
+                }
+            }
+        }
+    }
+
+    //**** WOODMART SHORTCODE STYLES ****//
+
+    [data-vc-shortcode="woodmart_info_box"] {
+
+        [data-vc-shortcode-param-name="woodmart_bg_position"] {
+            margin-left: 0;
+            margin-right: 350px;
+        }
+    }
+
+    //**** OPTION SECTION STYLE ****//
+
+    .woodmart-td-content {
+
+        .woodmart-slider-field-value-display {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    //**** WOODMART COLORPICKER ****//
+
+    .woodmart-vc-colorpicker {
+
+        .wp-picker-holder {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    //**** WOODMART BUTTON SET ****//
+
+    .woodmart-vc-button-set-list {
+
+        li {
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-left: 2px;
+            }
+
+            &:first-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+            }
+    
+            &:last-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: $woodmart-vc-options-border;
+                border-bottom-left-radius: $woodmart-vc-options-border;
+            }
+        }
+    }
+
+    //**** WOODMART BUTTON SWITCH ****//
+
+    .woodmart-vc-switch {
+
+        .switch-controls {
+    
+            &:first-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: $woodmart-vc-options-border;
+                border-bottom-right-radius: $woodmart-vc-options-border;
+                margin-right: 0;
+                margin-left: 2px;
+            }
+    
+            &:last-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: $woodmart-vc-options-border;
+                border-bottom-left-radius: $woodmart-vc-options-border;
+            }
+        }
+    }
+
+    //**** RESPONSIVE FONT SIZE ****//
+
+    .woodmart-rs-wrapper {
+
+        > div {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        .woodmart-rs-input {
+            border-top-left-radius: $woodmart-vc-options-border;
+            border-bottom-left-radius: $woodmart-vc-options-border;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .woodmart-rs-unit {
+            margin-left: 0;
+        }
+    }
+
+    .woodmart-rs-icon {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: $woodmart-vc-options-border;
+        border-bottom-right-radius: $woodmart-vc-options-border;
+    }
+
+    .woodmart-rs-trigger {
+
+        .dashicons-arrow-right-alt2 {
+
+            &:before {
+                content: "\f341";
+            }
+        }
+    }
+
+    //**** SHORTCODE OPTIONS HINT ****//
+
+    .woodmart-hint {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    //**** SHORTCODE OPTIONS TOOLTIPS ****//
+
+    .woodmart-tooltip-label {
+        left: auto;
+        right: 50%;
+    }
+
+    //**** SHORTCODE OPTIONS TOOLTIPS ****//
+
+    .woodmart-images-opts {
+
+        .woodmart-image-opt {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 600px) {
+    
+        .redux-container {
+        
+             .redux-sidebar {
+                width: 44px;
+
+                .redux-group-tab-link-a {
+
+                    span {
+                        left: auto;
+                        right: 44px;
+                        border-width: 1px 0px 1px 1px;
+                    }
+                }
+            }
+    
+            .redux-main {
+                margin-left: 0;
+                margin-right: 44px;
+            }
+        }
+    }
+}
